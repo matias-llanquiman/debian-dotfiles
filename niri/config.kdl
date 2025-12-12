@@ -2,16 +2,6 @@
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
-workspace "main"
-workspace "multimedia" {
-    layout {
-        default-column-display "tabbed"
-        tab-indicator {
-            hide-when-single-tab
-        }
-    }
-}
-
 /-config-notification {
     disable-failed
 }
@@ -270,13 +260,6 @@ window-rule {
 window-rule {
     match app-id="obsidian"
     open-maximized true
-}
-
-window-rule {
-    match is-focused=false app-id="Spotify"
-    open-maximized true
-    open-on-workspace "multimedia"
-    block-out-from "screencast"
 }
 
 //block out password managers from screen capture.
