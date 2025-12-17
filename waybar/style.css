@@ -1,0 +1,210 @@
+/* =====================================================
+   Global base (thinner bar)
+   ===================================================== */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Fira Sans, FiraCode Nerd Font";
+    font-size: 14px;
+    min-height: 10px;
+}
+
+/* =====================================================
+   Waybar window
+   ===================================================== */
+window#waybar {
+    /* background-color: #2f343f; */
+    color: #a5adcb;
+}
+
+window#waybar.hidden {
+    opacity: 0.25;
+}
+
+/* =====================================================
+   Modules containers (ONLY background + border)
+   ===================================================== */
+.modules-left .module#window {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+}
+
+.modules-left .module:not(#window),
+.modules-center ,
+.modules-right{
+    background: rgba(32, 35, 42, 0.85);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.modules-right {
+  padding-right: 5px;
+}
+
+/* Space between inner widgets */
+.modules-left > widget,
+.modules-center > widget,
+.modules-right > widget {
+    margin: 0 2px;
+}
+
+/* =====================================================
+   Generic buttons
+   ===================================================== */
+button {
+    box-shadow: none;
+}
+
+button:hover {
+    background: transparent;
+}
+
+/* =====================================================
+   Workspaces (grouped inside left area)
+   ===================================================== */
+#workspaces {
+    background: transparent;
+    padding: 2px 3px 0px 0px;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #ffffff;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 4px 0px 4px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#workspaces button.active {
+    /* background: rgba(165, 173, 203, 0.22); */
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    /* background: rgba(165, 173, 203, 0.30); */
+    color: #a5adcb;
+}
+
+/* #workspaces button.urgent { */
+/*     background: rgba(245, 60, 60, 0.35); */
+/*     color: #ffffff; */
+/* } */
+
+/* =====================================================
+   Tooltips
+   ===================================================== */
+tooltip {
+    background: rgba(32, 35, 42, 0.95);
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =====================================================
+   Modules (NO background by default)
+   ===================================================== */
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#idle_inhibitor,
+#power-profiles-daemon,
+#mpd,
+#tray,
+#language,
+#clock,
+#scratchpad {
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 15px;
+    transition: background-color 0.2s ease;
+}
+
+#window > * {
+  margin-left: 7px;
+}
+
+/* Hover ONLY on icons/modules */
+#clock:hover,
+#battery:hover,
+#disk:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#wireplumber:hover,
+#idle_inhibitor:hover,
+#power-profiles-daemon:hover,
+#mpd:hover,
+#language:hover,
+#keyboard-state:hover,
+#scratchpad:hover {
+    /* background: rgba(165, 173, 203, 0.25); */
+  color: #a5adcb;
+}
+
+#tray > * {
+    opacity: 1;
+    transition: opacity 150ms ease;
+}
+
+#tray > *:hover {
+    opacity: 0.7;
+}
+
+/* =====================================================
+   Battery states
+   ===================================================== */
+#battery.charging,
+#battery.plugged {
+    background-color: #26A65B;
+    color: #ffffff;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation: blink 0.5s steps(12) infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* =====================================================
+   Power profiles
+   ===================================================== */
+#power-profiles-daemon.performance {
+    background-color: #f53c3c;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #2980b9;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+/* =====================================================
+   Tray
+   ===================================================== */
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
