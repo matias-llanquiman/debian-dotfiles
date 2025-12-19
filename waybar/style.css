@@ -13,7 +13,7 @@
    Waybar window
    ===================================================== */
 window#waybar {
-    /* background-color: #2f343f; */
+    background-color: #2f343f;
     color: #a5adcb;
 }
 
@@ -33,7 +33,7 @@ window#waybar.hidden {
 .modules-left .module:not(#window),
 .modules-center ,
 .modules-right{
-    background: rgba(32, 35, 42, 0.85);
+    background: #16191c;
     border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.06);
 }
