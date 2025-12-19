@@ -143,7 +143,8 @@
     "format": "{short}",
     "format-us": "us",
     "format-latam": "lt",
-    "keyboard-name": "at-translated-set-2-keyboard"
+    "keyboard-name": "at-translated-set-2-keyboard",
+    "on-click": "niri msg action switch-layout next"
   },
   "temperature": {
     // "thermal-zone": 2,
