@@ -173,7 +173,7 @@ environment {
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
     //QT_STYLE_OVERRIDE "kvantum"
 
-    //GDK_BACKEND "wayland,x11"
+    GDK_BACKEND "wayland,x11"
     GTK_THEME "Arc-Dark"
 
     TERMINAL "kitty"
@@ -309,7 +309,7 @@ binds {
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume raise"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume lower"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "swayosd-client --output-volume mute-toggle"; }
-    Alt+F4     allow-when-locked=true { spawn-sh "swayosd-client --input-volume mute-toggle"; }
+    Ctrl+F4     allow-when-locked=true { spawn-sh "swayosd-client --input-volume mute-toggle"; }
 
     // Media Player
     XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
