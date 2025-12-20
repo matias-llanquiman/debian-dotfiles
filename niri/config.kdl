@@ -58,8 +58,8 @@ gestures {
 input {
     keyboard {
         xkb {
-	    layout "us, latam"
-	    options "grp:win_space_toggle"
+	        layout "us, latam"
+	        options "grp:win_space_toggle"
         }
         numlock
     }
@@ -82,7 +82,7 @@ input {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 8
+    gaps 1 //8
     //background-color "transparent"
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -126,8 +126,8 @@ layout {
         urgent-color   "#cc4444"      // Softer red
     }
     focus-ring {
-        width 2
-        active-color   "#7fc8ff"      // Medium gray=#808080
+        width 1
+        active-color   "#7fc8ff"      // Medium gray=#808080 //#7fc8ff
         inactive-color "#505050"      // Dark gray
     }
     shadow {
@@ -135,6 +135,18 @@ layout {
         spread 5
         offset x=0 y=5
         color "#0007"
+    }
+    tab-indicator {
+      on
+      //hide-when-single-tab
+      place-within-column
+      gap -4
+      width 4
+      position "left"
+      length total-proportion=0.1
+      // active-color "red"
+      inactive-color   "#707070"
+
     }
     struts {
     }
@@ -203,18 +215,6 @@ animations {
         spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
     }
 }
-// Window rules let you adjust behavior for individual windows.
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-//window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    //match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    //default-column-width {}
-//}
 
 /-window-rule {
     match app-id=r#"^org\.gnome\."#
@@ -246,9 +246,9 @@ window-rule {
     match app-id="kitty"
     draw-border-with-background false
 }
-/-window-rule {
+window-rule {
     match is-active=false
-    opacity 0.9
+    opacity 0.98
 }
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
@@ -256,7 +256,7 @@ window-rule {
     open-floating true
 }
 window-rule {
-    geometry-corner-radius 5
+    geometry-corner-radius 3
     clip-to-geometry true
 }
 
