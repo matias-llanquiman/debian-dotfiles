@@ -9,7 +9,7 @@
   // Choose the order of the modules
   "modules-left": [
     "niri/workspaces",
-    "niri/window"
+    "group/controls"
   ],
   "modules-center": [
     "clock"
@@ -46,7 +46,8 @@
     "format": "",
     //"max-length": 120,
     "icon": true,
-    "icon-size": 16
+    "icon-size": 17,
+    "on-click": "waybar-msg toggle group/controls"
   },
   "custom/notification": {
     "tooltip": true,
@@ -262,5 +263,31 @@
       ]
     },
     "on-click": "pavucontrol"
+  },
+  "group/controls": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "group-child"
+    },
+    "modules": [
+      "niri/window",
+      "custom/maximize",
+      "custom/exit"
+    ]
+  },
+  "custom/arrow": {
+    "format": "▶",
+    "on-click": "waybar-msg toggle group/controls"
+  },
+  "custom/exit": {
+    "format": "",
+    "on-click": "niri msg action close-window",
+    "tooltip-format": "Exit"
+  },
+  "custom/maximize": {
+    "format": "󰖯",
+    "on-click": "niri msg action maximize-column",
+    "tooltip-format": "maximize"
   }
 }

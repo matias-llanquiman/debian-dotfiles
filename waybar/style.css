@@ -30,7 +30,7 @@ window#waybar.hidden {
     color: #ffffff;
 }
 
-.modules-left .module:not(#window),
+.modules-left .module:not(#window):not(#custom-exit):not(#custom-maximize),
 .modules-center ,
 .modules-right{
     background: #16191c;
@@ -120,6 +120,7 @@ tooltip {
 #mpd,
 #tray,
 #custom-notification,
+#custom-arrow,
 #language,
 #clock,
 #scratchpad {
@@ -129,8 +130,14 @@ tooltip {
     transition: background-color 0.2s ease;
 }
 
-#window > * {
-  margin-left: 7px;
+#window {
+  padding-left: 8px;
+}
+
+#custom-exit,
+#custom-maximize {
+  font-size: 15px;
+  margin-right: 7px;
 }
 
 /* Hover ONLY on icons/modules */
